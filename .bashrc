@@ -56,30 +56,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# git-completion.bash / git-prompt.sh
-if [ -f $HOME/dotfiles/myapps/git-bash-prompt/git-prompt.sh ]; then
-    source $HOME/dotfiles/myapps/git-bash-prompt/git-prompt.sh
-fi
-if [ -f $HOME/dotfiles/myapps/git-bash-prompt/git-completion.bash ]; then
-    source $HOME/dotfiles/myapps/git-bash-prompt/git-completion.bash
-fi
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
-
-if [ "$color_prompt" = yes ]; then
-    GREEN='\[\e[32m\]'
-    UNSET='\[\e[0m\]'
-    CYAN='\[\e[36m\]'
-    GRAY='\[\e[40m\]'
-    PS1="${debian_chroot:+($debian_chroot)}\n\u$CYAN@\h$UNSET [\w]$(__git_ps1)\n\$ "
-    #PS1="${debian_chroot:+($debian_chroot)}$GRAY[\w]\$(__git_ps1)$UNSET\n\u$CYAN@\h$UNSET \$ "
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -88,6 +64,17 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+#source $HOME/dotfiles/myapps/git-bash-prompt/git-prompt.sh
+#source $HOME/dotfiles/myapps/git-bash-prompt/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\n\u@\h[\w]$(__git_ps1)\n>>> '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -138,3 +125,4 @@ complete -cf sudo
 # PATH to readable
 export PATH=$PATH:$HOME/dotfiles/myapps/
 export PATH=`echo $PATH | tr ':' '\n' | sort -u | paste -d: -s -`;
+
