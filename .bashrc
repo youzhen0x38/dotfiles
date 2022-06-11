@@ -124,5 +124,6 @@ fi
 complete -cf sudo
 # PATH to readable
 export PATH=$PATH:$HOME/dotfiles/myapps/
+export PATH=$PATH:~/.roswell/bin/
 export PATH=`echo $PATH | tr ':' '\n' | sort -u | paste -d: -s -`;
 
