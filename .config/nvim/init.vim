@@ -24,7 +24,7 @@ source $XDG_CONFIG_HOME/nvim/rc/paredit.vim
  
 filetype off
 set belloff=all
-set clipboard=unnamedplus
+set clipboard=unnamed
 if has('mouse')
   set mouse-=a
 endif

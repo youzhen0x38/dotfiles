@@ -1,2 +1,2 @@
 sudo apt install -y \
-    build-essential jq curl
+    build-essential jq curl sbcl
