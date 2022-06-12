@@ -11,3 +11,7 @@ cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 cnoremap <C-h> <BS>
 
+""" Normal
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+

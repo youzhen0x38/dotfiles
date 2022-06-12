@@ -11,6 +11,7 @@ endif
 call plug#begin(expand('$HOME/.local/share/nvim/plugged'))
     Plug 'vlime/vlime'
     Plug 'vim-scripts/paredit.vim'
+    Plug 'ap/vim-buftabline'
 call plug#end()
 
 
