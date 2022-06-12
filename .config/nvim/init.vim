@@ -18,10 +18,10 @@ call plug#end()
 " ============================================================================
 " Vim configration
 " ============================================================================
-source $XDG_CONFIG_HOME/nvim/rc/keymap.vim
-source $XDG_CONFIG_HOME/nvim/rc/appearance.vim
-source $XDG_CONFIG_HOME/nvim/rc/vlime.vim
-source $XDG_CONFIG_HOME/nvim/rc/paredit.vim
+source $XDG_CONFIG_HOME/nvim/keymap.vim
+source $XDG_CONFIG_HOME/nvim/appearance.vim
+source $XDG_CONFIG_HOME/nvim/vlime.vim
+source $XDG_CONFIG_HOME/nvim/paredit.vim
  
 filetype off
 set belloff=all
