@@ -96,6 +96,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ps='ps --sort=start_time'
+alias vi='nvim'
+alias vim='nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -122,8 +124,10 @@ if ! shopt -oq posix; then
 fi
 
 complete -cf sudo
+# environment variable
+export XDG_CONFIG_HOME=$HOME/.config
 # PATH to readable
 export PATH=$PATH:$HOME/dotfiles/myapps/
-export PATH=$PATH:~/.roswell/bin/
+export PATH=$PATH:$HOME/.roswell/bin/
 export PATH=`echo $PATH | tr ':' '\n' | sort -u | paste -d: -s -`;
 
