@@ -69,8 +69,13 @@ esac
 #source $HOME/dotfiles/myapps/git-bash-prompt/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
+right_prompt(){
+    DATETIME=`date +%Y/%m/%d\ %H:%M`
+    printf "%${COLUMNS}s" "$USER@$HOSTNAME $DATETIME"
+}
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\n\u@\h[\w]$(__git_ps1)\n>>> '
+    #PS1='${debian_chroot:+($debian_chroot)}\w$(__git_ps1)\n>>> '
+    PS1='\n\[$(tput sc; right_prompt; tput rc)\]${debian_chroot:+($debian_chroot)}[\w]$(__git_ps1)\n>>> '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
